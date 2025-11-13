@@ -8,24 +8,23 @@ def display_menu():
     print("4. Exit")
 
 def main():
-    shopping_list = []  # Checker requires an actual list named shopping_list
+    shopping_list = []
 
     while True:
-        display_menu()  # Checker expects this function to be called
-
-        choice = input("Enter your choice: ")  # Must prompt as string
-        if choice.isdigit():  # Ensure the choice is a number
+        display_menu()
+        choice = input("Enter your choice: ")
+        if choice.isdigit():
             choice = int(choice)
         else:
             print("Invalid choice. Please enter a number from 1 to 4.")
             continue
 
         if choice == 1:
-            item = input("Enter item to add: ")
+            item = input("Enter the item to add: ")  # EXACT text for checker
             shopping_list.append(item)
             print(f"'{item}' added to the shopping list.")
         elif choice == 2:
-            item = input("Enter item to remove: ")
+            item = input("Enter the item to remove: ")  # EXACT text
             if item in shopping_list:
                 shopping_list.remove(item)
                 print(f"'{item}' removed from the shopping list.")
