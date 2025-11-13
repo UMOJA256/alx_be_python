@@ -2,18 +2,12 @@
 
 class BankAccount:
     def __init__(self, initial_balance=0):
-        """Initialize the account with an optional starting balance."""
         self.account_balance = initial_balance
 
     def deposit(self, amount):
-        """Deposit a specified amount to the account."""
-        if amount > 0:
-            self.account_balance += amount
-        else:
-            print("Deposit amount must be positive.")
+        self.account_balance += amount
 
     def withdraw(self, amount):
-        """Withdraw a specified amount from the account if funds are sufficient."""
         if amount <= self.account_balance:
             self.account_balance -= amount
             return True
@@ -21,5 +15,5 @@ class BankAccount:
             return False
 
     def display_balance(self):
-        """Display the current account balance."""
-        print(f"Current Balance: ${self.account_balance}")
+        # Ensure balance is always displayed with 2 decimal places
+        print(f"Current Balance: ${self.account_balance:.2f}")
